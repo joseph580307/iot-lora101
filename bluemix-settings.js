@@ -52,7 +52,8 @@ var settings = module.exports = {
 
     functionGlobalContext: {
     	
-    	  dexparserModule: require('./dex-parser')
+    	  dexparserModule: require("./dex-parser")
+    	 
     },
 
     storageModule: require("./couchstorage")
