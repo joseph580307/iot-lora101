@@ -1,3 +1,4 @@
+/*eslint-env node */
 /**
  * Copyright 2014 IBM Corp.
  *
@@ -49,9 +50,14 @@ var settings = module.exports = {
     // Serve up the welcome page
     httpStatic: path.join(__dirname,"public"),
 
-    functionGlobalContext: { },
+    functionGlobalContext: {
+    	
+    	  dexparse: require('./dex-parse')
+    },
 
     storageModule: require("./couchstorage")
+    
+  
 }
 
 if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
