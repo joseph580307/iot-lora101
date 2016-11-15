@@ -96,9 +96,8 @@ var defaultHandlers = {
     "PA3" : parsePA3,
     "PA5" : parsePA5
 };
-module.exports={
 
-	readText : function(text, cb) {
+exports.readText = function(text, cb) {
     var handlers = defaultHandlers
     
     text = text.toString()
@@ -127,9 +126,9 @@ module.exports={
     dexdata.complete()
     
     cb(undefined, dexdata);
-	},
+};
 
-	readFile : function(path, cb) {
+exports.readFile = function(path, cb) {
     fs.readFile(path, (err, data) => {
         if(err) {
             cb(err);  
@@ -137,7 +136,5 @@ module.exports={
         
         exports.readText(data, cb);
     })
-
-	}
 };
 
